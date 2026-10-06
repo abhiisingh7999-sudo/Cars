@@ -125,4 +125,4 @@ st.divider()
 
 # Footer
 
-st.caption("Developed by Mayank Raghuwanshi | Data Analytics Project")
+st.caption("Developed by Abhijeet Singh Rajpoot| Data Analytics Project")

@@ -94,56 +94,6 @@ st.pyplot(fig)
 
 st.divider()
 
-st.header("Year vs Price")
-
-fig, ax = plt.subplots(figsize=(8, 5))
-ax.scatter(df["Year"], df["Price"])
-ax.set_xlabel("Year")
-ax.set_ylabel("Price")
-ax.set_title("Year vs Price")
-
-st.pyplot(fig)
-
-st.divider()
-
-st.header("Price by Fuel Type")
-
-fuel_groups = []
-label = []
-
-for fuel_type in df["Fuel_Type"].dropna().unique():
-    fuel_groups.append(df[df["Fuel_Type"] == fuel_type]["Price"])
-    label.append(fuel_type)
-
-fig, ax = plt.subplots(figsize=(7, 5))
-ax.boxplot(fuel_groups, label=label)
-ax.set_xlabel("Fuel Type")
-ax.set_ylabel("Price")
-ax.set_title("Price by Fuel Type")
-
-st.pyplot(fig)
-
-st.divider()
-
-st.header("Correlation Heatmap")
-
-numeric_df = df.select_dtypes(include="number")
-corr = numeric_df.corr()
-
-fig, ax = plt.subplots(figsize=(10, 8))
-cax = ax.imshow(corr, cmap="coolwarm")
-
-ax.set_xticks(range(len(corr.columns)))
-ax.set_xticklabels(corr.columns, rotation=90)
-ax.set_yticks(range(len(corr.columns)))
-ax.set_yticklabels(corr.columns)
-
-plt.colorbar(cax)
-
-st.pyplot(fig)
-
-st.divider()
-
 st.header("Average Price by Fuel Type")
 
 avg_price = df.groupby("Fuel_Type")["Price"].mean()

@@ -11,8 +11,6 @@ st.write(
     "This page summarizes the main findings obtained from the Exploratory Data Analysis of the Used Cars dataset."
 )
 
-st.divider()
-
 st.header("Key Findings")
 
 st.write("""
@@ -25,8 +23,6 @@ st.write("""
 - Newer cars generally have higher selling prices than older cars.
 """)
 
-st.divider()
-
 st.header("Business Insights")
 
 st.write("""
@@ -36,15 +32,11 @@ st.write("""
 - The analysis helps understand market trends and customer preferences.
 """)
 
-st.divider()
-
 st.header("Project Summary")
 
 st.write("""
 This project demonstrates how Python, Pandas, Plotly, and Streamlit can be used to analyze and visualize real-world data. Interactive charts make it easier to discover trends, compare categories, and support data-driven decision making.
 """)
-
-st.divider()
 
 st.header("Technologies Used")
 
@@ -54,7 +46,5 @@ st.write("""
 - Plotly Express
 - Streamlit
 """)
-
-st.divider()
 
 st.success("Exploratory Data Analysis Completed Successfully.")

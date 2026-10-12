@@ -11,12 +11,9 @@ df = pd.read_csv("Cars_cleaned.csv")
 
 st.title("Exploratory Data Analysis")
 st.write("This page contains visual analysis of the Cars dataset.")
-st.divider()
 
 st.header("Dataset Preview")
 st.dataframe(df.head()) 
-
-st.divider()
 
 st.header("Top 10 Car Companies")
 
@@ -30,8 +27,6 @@ ax.set_title("Top 10 Car Companies")
 plt.xticks(rotation=45)
 
 st.pyplot(fig)
-
-st.divider()
 
 st.header("Fuel Type Distribution")
 
@@ -48,8 +43,6 @@ ax.set_title("Fuel Type Distribution")
 
 st.pyplot(fig)
 
-st.divider()
-
 st.header("Transmission Distribution")
 
 trans = df["Transmission"].value_counts()
@@ -61,8 +54,6 @@ ax.set_ylabel("Count")
 ax.set_title("Transmission Distribution")
 
 st.pyplot(fig)
-
-st.divider()
 
 st.header("Owner Type Distribution")
 
@@ -77,8 +68,6 @@ plt.xticks(rotation=20)
 
 st.pyplot(fig)
 
-st.divider()
-
 st.header("Top 10 Locations")
 
 location = df["Location"].value_counts().head(10)
@@ -92,8 +81,6 @@ plt.xticks(rotation=45)
 
 st.pyplot(fig)
 
-st.divider()
-
 st.header("Average Price by Fuel Type")
 
 avg_price = df.groupby("Fuel_Type")["Price"].mean()
@@ -105,8 +92,6 @@ ax.set_ylabel("Average Price")
 ax.set_title("Average Price by Fuel Type")
 
 st.pyplot(fig)
-
-st.divider()
 
 st.header("Average Mileage by Fuel Type")
 
@@ -120,8 +105,6 @@ ax.set_title("Average Mileage by Fuel Type")
 
 st.pyplot(fig)
 
-st.divider()
-
 st.header("Average Engine Size by Fuel Type")
 
 avg_engine = df.groupby("Fuel_Type")["Engine_value"].mean()
@@ -133,8 +116,6 @@ ax.set_ylabel("Engine Size")
 ax.set_title("Average Engine Size")
 
 st.pyplot(fig)
-
-st.divider()
 
 st.header("Average Power by Fuel Type")
 
@@ -148,8 +129,6 @@ ax.set_title("Average Power")
 
 st.pyplot(fig)
 
-st.divider()
-
 st.header("Dataset Summary")
 
 col1, col2 = st.columns(2)
@@ -161,7 +140,5 @@ with col1:
 with col2:
     st.metric("Missing Values", df.isnull().sum().sum())
     st.metric("Duplicate Records", df.duplicated().sum())
-
-st.divider()
 
 st.success("Exploratory Data Analysis Completed Successfully.")

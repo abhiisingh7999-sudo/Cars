@@ -14,8 +14,6 @@ st.title("Used Cars Exploratory Data Analysis")
 
 st.subheader("Interactive Dashboard using Streamlit")
 
-st.divider()
-
 # KPI Cards
 
 col1, col2, col3, col4 = st.columns(4)
@@ -24,8 +22,6 @@ col1.metric("Total Cars", df.shape[0])
 col2.metric("Features", df.shape[1])
 col3.metric("Missing Values", df.isnull().sum().sum())
 col4.metric("Duplicates", df.duplicated().sum())
-
-st.divider()
 
 # About Dataset
 
@@ -48,8 +44,6 @@ The project is completely developed using:
 - Streamlit
 """)
 
-st.divider()
-
 # Business Objectives
 
 st.header("Business Objectives")
@@ -67,8 +61,6 @@ with col2:
     st.success("Study ownership patterns")
     st.success("Discover market trends")
     st.success("Generate business insights")
-
-st.divider()
 
 # Dataset Summary
 
@@ -91,8 +83,6 @@ summary = pd.DataFrame({
 
 st.dataframe(summary,use_container_width=True)
 
-st.divider()
-
 # Feature Information
 
 st.header("Dataset Features")
@@ -105,23 +95,17 @@ feature_info = pd.DataFrame({
 
 st.dataframe(feature_info, use_container_width=True)
 
-st.divider()
-
 # Numerical Summary
 
 st.header("Numerical Summary")
 
 st.dataframe(df.describe(), use_container_width=True)
 
-st.divider()
-
 # Sample Dataset
 
 st.header("Sample Dataset")
 
 st.dataframe(df.head(10), use_container_width=True)
-
-st.divider()
 
 # Footer
 
